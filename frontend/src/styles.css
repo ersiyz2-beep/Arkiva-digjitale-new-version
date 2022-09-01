@@ -27,6 +27,9 @@ body {
 hr{
   width: auto;
 }
+.mkultures{
+  width: 400px;
+}
 .menu-bar{
   position: relative;
   display: flex;
