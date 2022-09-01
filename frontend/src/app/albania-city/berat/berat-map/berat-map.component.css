@@ -1,0 +1,16 @@
+.city-map{
+  position: relative;
+  width: 600px;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 100px;
+
+}
+svg{
+  margin: 80px;
+
+}
+polygon{
+  fill: #FCE45C;
+  opacity: 70%;
+}

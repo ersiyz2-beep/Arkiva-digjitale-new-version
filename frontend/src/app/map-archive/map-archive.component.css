@@ -1,0 +1,42 @@
+
+#map-archive{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin-left: 100px;
+  margin-top: 12px;
+}
+.albania-map {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+}
+.albania-map svg{
+  height: 800px;
+  width: 360px;
+  margin-top: 25px;
+
+}
+.land
+{
+  fill: #CCCCCC;
+  fill-opacity: 1;
+  stroke:white;
+  stroke-opacity: 1;
+  stroke-width:0.5;
+  margin-top: 20px;
+}
+.land:hover {
+  fill: #333333;
+  transition: 0.6s;
+}
+.map{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

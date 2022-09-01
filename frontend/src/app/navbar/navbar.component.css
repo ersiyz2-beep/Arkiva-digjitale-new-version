@@ -1,0 +1,86 @@
+/*website*/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+/* Header Start */
+
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 1600px;
+
+}
+
+#header h1{
+  margin-right: auto;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #333333;
+}
+#web-header{
+  margin-right: 100px;
+  margin-left: 100px;
+
+}
+
+
+
+
+
+
+#navbar{
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 15px;
+  position: relative;
+}
+#navbar li a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+  content: "";
+  width: 30%;
+  height: 3px;
+  background: #FCE45C	;
+  position: absolute;
+  bottom: -4px;
+  justify-content: center;
+  left: 20px;
+}
+.login-part {
+  padding-left: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.login-part li a{
+  background-color: #FCE45C;
+  border-radius: 10px;
+  color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.login-part a{
+  color: white;
+}

@@ -1,0 +1,9 @@
+#inline{
+  display: inline-flex;
+}
+.elbasan{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+}

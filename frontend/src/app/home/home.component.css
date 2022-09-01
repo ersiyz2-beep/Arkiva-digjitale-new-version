@@ -1,0 +1,33 @@
+
+#home{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.web-image {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: 5%;
+  margin-top: 2%;
+  width: 800px;
+}
+.hero{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 10%;
+  width: 800px;
+}
+h1{
+  font-size: 40px;
+}
+p{
+  font-size: 20px;
+}
+p strong{
+  background-color: #F8D775;
+  padding: 15px;
+  border-radius: 5px;
+}
