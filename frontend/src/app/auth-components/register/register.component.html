@@ -3,34 +3,37 @@
 
 <section id="register">
 
-
 <div class="row">
 
   <h1>Regjistrohu tani</h1>
   <br>
   <div class="register-form">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
     <p>
-      <input type="text"  placeholder=" Name" formControlName="name"
+      <input formControlName="fullname" ype="text"  placeholder=" Name"
              pInputText />
     </p>
     <br>
     <p>
-      <input type="text"  placeholder=" Email Address" formControlName="email"
+      <input  formControlName="email" type="text"  placeholder=" Email Address"
              pInputText />
     </p>
     <br>
     <p>
-      <input type="password"  placeholder=" Password " formControlName="password"
+      <input formControlName="password" type="password"  placeholder=" Password "
              pInputText />
     </p>
     <br>
-    <input type="password"  placeholder=" Confirm Password " formControlName="password"
+    <input  formControlName="phone" type="mobile"  placeholder=" Phone "
            pInputText />
     <p>
       <br>
-      <button>
+      <button type="submit">
         Register
       </button>
+    </form>
+
     <div class="forgot-pass">
       <p><strong><a routerLink="/login"> Ke nje llogari? Hyr tani</a></strong></p>
     </div>
@@ -42,3 +45,4 @@
 
   </div>
 </section>
+<router-outlet></router-outlet>

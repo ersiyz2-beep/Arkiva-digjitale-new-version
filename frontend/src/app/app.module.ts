@@ -53,6 +53,8 @@ import { UsersComponent } from './auth-components/users/users.component';
 import { ElbasanAuthorListComponent } from './albania-city/elbasan/elbasan-author-list/elbasan-author-list.component';
 import { CarouselMapComponent } from './map-archive/carousel-map/carousel-map.component';
 import {CarouselModule} from "primeng/carousel";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -110,7 +112,10 @@ import {CarouselModule} from "primeng/carousel";
     ButtonModule,
     AppRoutingModule,
     DialogModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
