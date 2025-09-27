@@ -1,0 +1,204 @@
+.map-archive-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7f7f7 0%, #FCE45C 20%, #F8D775 100%);
+  padding: 2rem;
+  position: relative;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.map-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Spartan', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.map-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+}
+
+.albania-map {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.albania-map svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.land {
+  fill: #e8e8e8;
+  stroke: #fff;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.land:hover,
+.land.hovered {
+  fill: #FCE45C;
+  stroke: #F8D775;
+  stroke-width: 3;
+  filter: url(#glow);
+  transform: scale(1.05);
+}
+
+.land.selected {
+  fill: #F8D775;
+  stroke: #333;
+  stroke-width: 3;
+  filter: url(#glow);
+  transform: scale(1.08);
+}
+
+.city-info-panel {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 10;
+  animation: slideInRight 0.3s ease-out;
+}
+
+.city-info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  max-width: 300px;
+  border: 2px solid #FCE45C;
+}
+
+.city-info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Spartan', sans-serif;
+}
+
+.city-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.city-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.explore-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #FCE45C 0%, #F8D775 100%);
+  border: none;
+  border-radius: 12px;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(252, 228, 92, 0.3);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .city-info-panel {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+  }
+  
+  .map-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-header h2 {
+    font-size: 2rem;
+  }
+  
+  .map-header p {
+    font-size: 1rem;
+  }
+  
+  .albania-map {
+    padding: 1rem;
+  }
+  
+  .city-info-card {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,66 @@
+<div class="auth-container">
+  <div class="auth-background"></div>
+  
+  <section class="auth-section">
+    <div class="auth-image">
+      <img src="../../assets/images/login.svg" alt="Login illustration">
+    </div>
+    
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h1>Mirë se erdhe përsëri!</h1>
+        <p>Akseso llogarinë tënde për të vazhduar</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="Shkruaj email-in tënd"
+            [class.error]="email?.invalid && email?.touched"
+          />
+          <div class="error-message" *ngIf="email?.invalid && email?.touched">
+            <span *ngIf="email?.errors?.['required']">Email është i detyrueshëm</span>
+            <span *ngIf="email?.errors?.['email']">Email nuk është valid</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Fjalëkalimi</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Shkruaj fjalëkalimin"
+            [class.error]="password?.invalid && password?.touched"
+          />
+          <div class="error-message" *ngIf="password?.invalid && password?.touched">
+            <span *ngIf="password?.errors?.['required']">Fjalëkalimi është i detyrueshëm</span>
+            <span *ngIf="password?.errors?.['minlength']">Fjalëkalimi duhet të ketë të paktën 6 karaktere</span>
+          </div>
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <button 
+          type="submit" 
+          class="auth-button primary"
+          [disabled]="loginForm.invalid || loading"
+        >
+          <span *ngIf="!loading">Hyr</span>
+          <span *ngIf="loading">Duke u kyçur...</span>
+        </button>
+
+        <div class="auth-links">
+          <a href="#" class="forgot-password">Keni harruar fjalëkalimin?</a>
+          <p>Nuk keni llogari? <a routerLink="/register" class="register-link">Regjistrohuni këtu</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

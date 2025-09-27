@@ -1,0 +1,113 @@
+<div class="auth-container">
+  <div class="auth-background"></div>
+  
+  <section class="auth-section">
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h1>Krijo llogarinë tënde</h1>
+        <p>Bashkohu me komunitetin tonë dhe eksploro arkivën digjitale</p>
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="form-group">
+          <label for="fullName">Emri i plotë</label>
+          <input
+            id="fullName"
+            type="text"
+            formControlName="fullName"
+            placeholder="Shkruaj emrin tënd të plotë"
+            [class.error]="fullName?.invalid && fullName?.touched"
+          />
+          <div class="error-message" *ngIf="fullName?.invalid && fullName?.touched">
+            <span *ngIf="fullName?.errors?.['required']">Emri është i detyrueshëm</span>
+            <span *ngIf="fullName?.errors?.['minlength']">Emri duhet të ketë të paktën 2 karaktere</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="Shkruaj email-in tënd"
+            [class.error]="email?.invalid && email?.touched"
+          />
+          <div class="error-message" *ngIf="email?.invalid && email?.touched">
+            <span *ngIf="email?.errors?.['required']">Email është i detyrueshëm</span>
+            <span *ngIf="email?.errors?.['email']">Email nuk është valid</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefoni (opsional)</label>
+          <input
+            id="phone"
+            type="tel"
+            formControlName="phone"
+            placeholder="Shkruaj numrin e telefonit"
+            [class.error]="phone?.invalid && phone?.touched"
+          />
+          <div class="error-message" *ngIf="phone?.invalid && phone?.touched">
+            <span *ngIf="phone?.errors?.['pattern']">Numri i telefonit nuk është valid</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Fjalëkalimi</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Shkruaj fjalëkalimin"
+            [class.error]="password?.invalid && password?.touched"
+          />
+          <div class="error-message" *ngIf="password?.invalid && password?.touched">
+            <span *ngIf="password?.errors?.['required']">Fjalëkalimi është i detyrueshëm</span>
+            <span *ngIf="password?.errors?.['minlength']">Fjalëkalimi duhet të ketë të paktën 6 karaktere</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Konfirmo fjalëkalimin</label>
+          <input
+            id="confirmPassword"
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Shkruaj përsëri fjalëkalimin"
+            [class.error]="confirmPassword?.invalid && confirmPassword?.touched"
+          />
+          <div class="error-message" *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+            <span *ngIf="confirmPassword?.errors?.['required']">Konfirmimi i fjalëkalimit është i detyrueshëm</span>
+            <span *ngIf="confirmPassword?.errors?.['passwordMismatch']">Fjalëkalimet nuk përputhen</span>
+          </div>
+        </div>
+
+        <div class="success-message" *ngIf="successMessage">
+          {{ successMessage }}
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <button 
+          type="submit" 
+          class="auth-button primary"
+          [disabled]="registerForm.invalid || loading"
+        >
+          <span *ngIf="!loading">Regjistrohu</span>
+          <span *ngIf="loading">Duke u regjistruar...</span>
+        </button>
+
+        <div class="auth-links">
+          <p>Keni tashmë llogari? <a routerLink="/login" class="login-link">Hyni këtu</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="auth-image">
+      <img src="../../assets/images/register.svg" alt="Register illustration">
+    </div>
+  </section>
+</div>
